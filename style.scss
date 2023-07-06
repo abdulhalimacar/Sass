@@ -1,0 +1,17 @@
+//1.yol
+div ul li a{
+
+    color: red;
+}
+
+//2.yol
+
+div{
+    ul{
+        li{
+            a{
+                color: green;
+            }
+        }
+    }
+}
