@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+//sass --watch SASS-1.scss:SASS-1.css>>>SASS-1.scss adlı dosyayı SASS-1.css adlı dosyaya değiştir
+
+//variable declaration
+
+$fontSize: 1.2rem;
+$fontColor: white;
+$nabBgColor: rgb(116, 116, 241);
+$fontFamily: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+$bgColor: pink;
+$bannerBgColor: hotpink;
+
+body {
+  font-family: $fontFamily;
+  background-color: $bgColor;
+  font-size: $fontSize;
+  color: $fontColor;
+}
+
+/*HEADER*/
+
+header {
+  background-color: $nabBgColor;
+  display: flex; //taşıyıcıya verdik dikkat!*-*
+  justify-content: space-between;
+  align-items: center; //bunu sil tekrar yap daha sonra:dikey ortalama yapar align items...
+  padding: 10px; //header'e iç hacim verdik
+
+  div {
+    img {
+      width: 80px;
+      border: 2px solid brown; //fotoğrafa bir border verdik
+      border-radius: 10px;
+    }
+  }
+
+  nav {
+    ul {
+      list-style: none;
+      li {
+        display: inline-block; //bunu yaparsak browse landing vesaireler yanyana gelir bunu yapmadan önce madde madde alt altaydılar
+
+        a {
+          color: white;
+          text-decoration: none;
+          //yuvarlakları kaldıralım browse landing vesairenin yanında olan
+          padding: 5px;
+          &:hover {
+            text-decoration: underline;
+            //bunu biz li'ye de aynısını yapabilirdik...
+            //veya a(li de olur) hizasında şunu da yapabilirdik a:hover{...}
+          }
+        }
+      }
+    }
+  }
+}
+
+//browse landing pages account> 1 sağda olmaları gerekiyor, 2 aynı hizada olmaları gerekiyor, 3 beyaz olmaları gerekiyor
+
+//BANNER
+
+.banner {
+  display: flex;
+  justify-content: space-between; //bir tanesi sol'a diğeri sağ'a dayandı...her ikisi duvarlara sıfırdır
+  align-items: center;
+  background-color: hotpink;
+  padding: 16px;
+  line-height: 2rem; //yazılar arası uzaklık
+  aside {
+    button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: turquoise;
+      margin-top: 12px; //yukarıdan boşluk bıraktık
+      margin-right: 10px; //aralarına boşluk verdik
+      &:hover{
+        background-color: pink;
+      }
+      
+    }
+  }
+
+  img {
+    width: 40%; //responsive olması için
+    //resmin çok büyüyüp veya küçülmesini nasıl engelleriz max veya min width ile yaparız
+    max-width: 400px;
+    min-width: 600px;
+    overflow:auto;
+  }
+}
