@@ -1,0 +1,195 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+//sass --watch SASS-1.scss:SASS-1.css>>>SASS-1.scss adlı dosyayı SASS-1.css adlı dosyaya değiştir
+
+//variable declaration
+
+$fontSize: 1.2rem;
+$fontColor: white;
+$nabBgColor: rgb(116, 116, 241);
+$fontFamily: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+$bgColor: pink;
+$bannerBgColor: hotpink;
+
+body {
+  font-family: $fontFamily;
+  background-color: pink;
+  font-size: $fontSize;
+  color: $fontColor;
+}
+
+/*HEADER*/
+
+header {
+  background-color: $nabBgColor;
+  display: flex; //taşıyıcıya verdik dikkat!*-*
+  justify-content: space-between;
+  align-items: center; //bunu sil tekrar yap daha sonra:dikey ortalama yapar align items...
+  padding: 10px; //header'e iç hacim verdik
+
+  div {
+    img {
+      width: 80px;
+      border: 2px solid brown; //fotoğrafa bir border verdik
+      border-radius: 10px;
+    }
+  }
+
+  nav {
+    ul {
+      list-style: none;
+      li {
+        display: inline-block; //bunu yaparsak browse landing vesaireler yanyana gelir bunu yapmadan önce madde madde alt altaydılar
+
+        a {
+          color: white;
+          text-decoration: none;
+          //yuvarlakları kaldıralım browse landing vesairenin yanında olan
+          padding: 5px;
+          &:hover {
+            text-decoration: underline;
+            //bunu biz li'ye de aynısını yapabilirdik...
+            //veya a(li de olur) hizasında şunu da yapabilirdik a:hover{...}
+          }
+        }
+      }
+    }
+  }
+}
+
+//browse landing pages account> 1 sağda olmaları gerekiyor, 2 aynı hizada olmaları gerekiyor, 3 beyaz olmaları gerekiyor
+
+//BANNER
+
+.banner {
+  display: flex;
+  justify-content: space-between; //bir tanesi sol'a diğeri sağ'a dayandı...her ikisi duvarlara sıfırdır
+  align-items: center;
+  background-color: hotpink;
+  padding: 16px;
+  line-height: 2rem; //yazılar arası uzaklık
+  aside {
+    button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: turquoise;
+      margin-top: 12px; //yukarıdan boşluk bıraktık
+      margin-right: 10px; //aralarına boşluk verdik
+      &:hover {
+        background-color: pink;
+      }
+    }
+  }
+
+  img {
+    width: 30%; //responsive olması için
+    //resmin çok büyüyüp veya küçülmesini nasıl engelleriz max veya min width ile yaparız
+    max-width: 450px;
+    min-width: 250px;
+  }
+}
+
+//CARDS
+//mybox(parametre gelir)
+//çok fazla parametre vermek iyi değildir
+
+@mixin mybox($backgroundColor, $Color) {
+  background-color: $backgroundColor;
+  color: $Color;
+  width: 25%; //parametre olarak vermedik böyle yaptık
+  // border: $myborder;
+  border-radius: 5px; //bu sabit olacak
+  height: 15rem;
+}
+
+.cards {
+  display: flex;
+  gap: 0.69rem;
+  padding: 0.75rem;
+  
+
+  .card1 {
+    @include mybox(green, white);
+  }
+
+  .card2 {
+    @include mybox(brown, white);
+  }
+
+  .card3 {
+    @include mybox(yellow, black);
+  }
+
+  .card4 {
+    @include mybox(lightblue, white);
+  }
+}
+
+//EXTEND
+
+.articles {
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+
+  .article1 {
+    background-color: grey;
+    width: 50%;
+    border: 1px solid black;
+    height: 10rem;
+    border-radius: 10px;
+  }
+
+  .article2 {
+    @extend .article1;
+    background-color: hotpink;
+  }
+}
+
+//FOOTER
+$textColor: blue,green,skyblue,darkgreen,aqua;
+$dark:1;
+
+footer{
+
+   p{
+    @if $dark==1 {
+    background-color: gray;//dark 1 ise p nin background colorı gray olsun dedik
+    }@else if $dark==2{
+      background-color: aqua;
+    }@else{
+      background-color: black;
+    }
+    
+  }
+
+  .social-icons{
+
+    display: flex;
+    height: 10rem;
+
+    @for $i from 1 through 5 {
+
+
+      .social#{$i}{
+
+
+        width: 20%;
+        background-color: lighten(rgb(144, 144, 199), $i*5);//lighten yerine darken ifadesi konulabilirdi...
+        font-size: $i*1rem;
+        color: nth($textColor,$i);
+      }
+    }
+
+  }
+}
+
+
+
+
+
