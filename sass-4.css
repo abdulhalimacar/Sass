@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: pink;
+  font-size: 1.2rem;
+  color: white;
+}
+
+/*HEADER*/
+header {
+  background-color: rgb(116, 116, 241);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+header div img {
+  width: 80px;
+  border: 2px solid brown;
+  border-radius: 10px;
+}
+header nav ul {
+  list-style: none;
+}
+header nav ul li {
+  display: inline-block;
+}
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+}
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: hotpink;
+  padding: 16px;
+  line-height: 2rem;
+}
+.banner aside button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: turquoise;
+  margin-top: 12px;
+  margin-right: 10px;
+}
+.banner aside button:hover {
+  background-color: pink;
+}
+.banner img {
+  width: 30%;
+  max-width: 450px;
+  min-width: 250px;
+}
+
+.cards {
+  display: flex;
+  gap: 0.69rem;
+  padding: 0.75rem;
+}
+.cards .card1 {
+  background-color: green;
+  color: white;
+  width: 25%;
+  border-radius: 5px;
+  height: 15rem;
+}
+.cards .card2 {
+  background-color: brown;
+  color: white;
+  width: 25%;
+  border-radius: 5px;
+  height: 15rem;
+}
+.cards .card3 {
+  background-color: yellow;
+  color: black;
+  width: 25%;
+  border-radius: 5px;
+  height: 15rem;
+}
+.cards .card4 {
+  background-color: lightblue;
+  color: white;
+  width: 25%;
+  border-radius: 5px;
+  height: 15rem;
+}
+
+.articles {
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+}
+.articles .article1, .articles .article2 {
+  background-color: grey;
+  width: 50%;
+  border: 1px solid black;
+  height: 10rem;
+  border-radius: 10px;
+}
+.articles .article2 {
+  background-color: hotpink;
+}
+
+footer p {
+  background-color: gray;
+}
+footer .social-icons {
+  display: flex;
+  height: 10rem;
+}
+footer .social-icons .social1 {
+  width: 20%;
+  background-color: #a1a1d0;
+  font-size: 1rem;
+  color: blue;
+}
+footer .social-icons .social2 {
+  width: 20%;
+  background-color: #b2b2d8;
+  font-size: 2rem;
+  color: green;
+}
+footer .social-icons .social3 {
+  width: 20%;
+  background-color: #c3c3e1;
+  font-size: 3rem;
+  color: skyblue;
+}
+footer .social-icons .social4 {
+  width: 20%;
+  background-color: #d4d4e9;
+  font-size: 4rem;
+  color: darkgreen;
+}
+footer .social-icons .social5 {
+  width: 20%;
+  background-color: #e5e5f2;
+  font-size: 5rem;
+  color: aqua;
+}
+
+/*# sourceMappingURL=sass-4.css.map */
