@@ -1,0 +1,44 @@
+.contact-bgImg-container{
+
+    @include bgimage(100vh,$main-bgimage);
+
+    nav{
+        height: 40vh;
+    }
+
+} 
+
+.contact{
+    border: 2px solid red;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    font-size: 1.5rem;
+    h2{
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    &__list{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2rem;
+        font-size: 1.5rem;
+        justify-content: center;
+
+    }
+
+    .text-secondary{
+        color: orange;
+    }
+}
+
+/*
+justify content center:y ekseninde ortalar
+align items center:x ekseninde ortalar 
+*/
